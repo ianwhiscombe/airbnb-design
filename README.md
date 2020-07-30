@@ -11,9 +11,9 @@
 
 > An HTML and CSS only (no JS!) copy of the Airbnb homepage. Produced using three images as the reference, I started with zero code and resources, and had to build a fully responsive homepage that hit the three design images exactly. All links and horizontal scrolling divs work as per the original website.  
 
-### 🏠 [Homepage](www.github.com)
+### 🏠 [Homepage](https://github.com/ianwhiscombe/airbnb-design)
 
-### ✨ [Demo](www.netlify.com)
+### ✨ [Demo](https://airbnb-design.netlify.app)
 
 ## Usage
 
