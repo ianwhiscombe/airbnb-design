@@ -1,0 +1,792 @@
+/* * Standard CSS */
+
+html {
+    box-sizing: border-box;
+    font-size: 10px;
+  }
+  
+  body {
+    font-size: 1.6rem;
+    margin: 0;
+    min-height: 100vh;
+  }
+  
+  *,
+  *::before,
+  *::after {
+    box-sizing: inherit;
+  }
+  
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+  
+  img {
+    max-width: 100%;
+    height: auto;
+    vertical-align: middle;
+  }
+  
+  ul {
+    list-style: none;
+    padding-left: 0;
+  }
+  
+  ul.typographic {
+    list-style: initial;
+    padding-inline-start: 20px;
+  }
+  
+  .sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+  }
+  .sr-only-focusable:active,
+  .sr-only-focusable:focus {
+    position: static;
+    width: auto;
+    height: auto;
+    overflow: visible;
+    clip: auto;
+    white-space: normal;
+  }
+  
+  
+
+/* * My CSS */
+
+/* * General Rules.  */
+
+body {
+  color: #484848;
+  font-family: Circular;
+  font-size: 1.4rem;
+}
+
+h1 {
+  font-family: Circular;
+  margin: 0;
+  padding-top: 20px;
+  padding-bottom: 18px;
+  font-size: 2.4rem;
+  line-height: 1.2;
+  font-weight: 600;
+  letter-spacing: 0.02rem;
+}
+h2 {
+  font-size: 1.8rem;
+  line-height: 1.4;
+  font-weight: 600;
+  margin-bottom: 12px;
+}
+p {
+  line-height: 1.3;
+}
+/* ipad plus font sizes.  */
+@media only screen and (min-width: 600px) {
+  h1 {
+    font-size: 3.2rem;
+  }
+  h2 {
+    font-size: 2.4rem;
+  }
+}
+
+/* container width for mobile  */
+.container {
+  width: 85%;
+  margin: 0 auto;
+}
+/* container width for ipad.  */
+@media only screen and (min-width: 600px) {
+  .container {
+    width: 90%;
+    margin: 0 auto;
+  }
+}
+/* fixed width for desktop so that background stretches and containers stay same size and centered.  */
+@media only screen and (min-width: 1023px) {
+  .container {
+    width: 840px;
+    margin: 0 auto;
+  }
+}
+/* create horizontal scroll for review/support/booked cards.  */
+.horizontal-scroll-wrapper {
+  display: flex;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  padding-left: 7.5%;
+}
+/* adds padding to the right of the last card in each horizontal-scroll-wrapper */
+.horizontal-scroll-wrapper div:nth-last-child(1) {
+  padding-right: 7.5%;
+}
+/* width and centering of scroll wrappers for ipad.  */
+@media only screen and (min-width: 600px) {
+  .horizontal-scroll-wrapper {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    padding-left: 5%;
+  }
+  /* adds padding to the right of the last card in each horizontal-scroll-wrapper */
+.horizontal-scroll-wrapper div:nth-last-child(1) {
+  padding-right: 5%;
+}
+}
+/* centre the scroll wrappers for desktop view and style tweaks.  */
+@media only screen and (min-width: 1023px) {
+  .horizontal-scroll-wrapper {
+    display: flex;
+    width: 840px;
+    margin: 0 auto;
+    padding-left: 0; 
+  }
+  .horizontal-scroll-wrapper div:nth-last-child(1) {
+    padding-right: 0;
+    margin-right: 0;
+}
+}
+/* Overrides UAS form styling.  */
+input, select {
+  border: none;
+  background: transparent;
+}
+select {
+-moz-appearance: window;
+-webkit-appearance: none;
+}
+
+/* * Navigation Bar.  */
+
+
+/* Turn the logo and navigation links into flex items and push them to either side of container.  */
+nav {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 10px;
+}
+/* hide two links from nav bar and white logoin mobile view */
+@media only screen and (max-width: 600px) {
+  .desktop-nav-links {
+    display: none;
+  }
+  .logo-desktop {
+    display: none;
+  }
+}
+/* To horizontally line up the two mobile view nav links.  */
+.nav-links {
+  display: flex;
+}
+
+/* separation between navigation links.  */
+.nav-links li {
+  margin-right: 32px;
+  font-family: Circular;
+  font-weight: 600;
+  font-size: 1.4rem;
+}
+/* remove right margin from last link (note this is selecting the last link in desktop view AS WELL).  */
+.nav-links > li:nth-child(3) {
+  margin-right: 0;
+}
+/* Vertically centre align the logo and nav links.  */
+header nav a {
+  display: flex;
+  align-self: center; 
+}
+
+/* ipad plus nav bar styling.  */
+@media only screen and (min-width: 600px) {
+  .desktop-nav-links {
+    display: flex;
+    margin-right: 22px;
+  }
+  .nav-links li {
+    color: #fff;
+    align-self: center;
+    margin-right: 23px;
+  }
+  .logo-mobile {
+    display: none;
+  }
+  .desktop-nav-links li:first-of-type {
+    background-color: #fff;
+    color: #484848;
+    border-radius: 4px;
+    padding: 10px 12px;
+  }
+  .desktop-nav-links li:last-of-type {
+    margin-right: 0;
+  }
+}
+/* pushes the logo and nav links to the far sides of the body.  */
+@media only screen and (min-width: 1023px) {
+  .nav-wrapper {
+    width: inherit;
+    padding-left: 22px;
+    padding-right: 22px;
+  }
+}
+
+/* Turns on background image for ipads and desktop. */
+@media only screen and (min-width: 600px) {
+  header {
+    background: url(../images/backgrounds/header_bg.jpg) no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+}
+
+/* * Form Styling */
+
+header {
+  padding-bottom: 1.7em;
+}
+
+/* sets width/position of form container for ipad plus.  */
+@media only screen and (min-width: 600px) {
+  .form-wrapper {
+    width: 505px;
+    background-color: #FFF;
+    padding: 32px;
+    border-radius: 4px;
+    box-shadow: 0 16px 40px rgba(0,0,0,0.12);
+  }
+  .form-wrapper h1 {
+    padding-top: 0;
+  }
+}
+
+/* styling for all labels in form.  */
+label {
+  text-transform: uppercase;
+  display: block;
+  font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, Helvetica Neue, sans-serif;
+  font-size: 1.2rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+  margin-bottom: 8.8px;
+}
+.form-wrapper .where {
+  margin-top: 12px;
+}
+/* border styling for location input box.  */
+.anywhere-styling {
+  height: 48px;
+  display: flex;
+  align-items: center;
+  padding-left: 12px;
+  padding-right: 12px;
+  border: 1px solid #EBEBEB;
+  border-radius: 4px;
+  
+}
+/* input box for location.  */
+.anywhere-styling input {
+  font-size: 1.6rem;
+  font-weight: 500;
+  width: 100%;
+}
+/* Styling and placement for checkin and checkout section of form.  */
+.date-picker {
+  display: flex;
+  margin-top: 25px;
+  margin-bottom: 16px;
+}
+.checkin {
+  flex-grow: 1;
+  width: 50%;
+}
+.checkout {
+  flex-grow: 1;
+  width: 50%;
+}
+.checkin input, 
+.checkout input {
+  background-color: transparent;
+  padding: 12.5px;
+  color: #767676;
+  border: 1px solid #EBEBEB;
+  flex-grow: 1;
+  width: 100%; 
+  font-weight: 600;
+  font-size: 1.5rem;
+}
+/* Rounded corners on left and remove border from right to avoid 'double' line effect. */
+.checkin input {
+  border-radius: 4px 0px 0px 4px;
+  border-right: 0;
+}
+/* Rounded corners on right.  */
+.checkout input {
+  border-radius: 0px 4px 4px 0px;
+}
+
+/* Styling and placement for adults/children numbers section of form. */
+
+.guest-picker {
+  display: flex;
+  margin-top: 29px;
+  margin-bottom: 23px;
+}
+.adult-picker {
+  flex-grow: 1;
+  width: 50%;
+}
+.children-picker {
+  flex-grow: 1;
+  width: 50%;
+}
+.adult-picker select, 
+.children-picker select {
+  flex-grow: 1;
+  width: 100%; 
+  font-size: 1.6rem;
+}
+/* placing the chevrons to the side of the number picker element. */
+.adult-picker-chevron,
+.child-picker-chevron {
+  border: 1px solid rgb(235, 235, 235);
+  display: flex;
+  align-items: center;
+  padding: 16px;
+}
+.adult-picker-chevron {
+  border-radius: 4px 0px 0px 4px;
+  border-right: 0;
+}
+.child-picker-chevron {
+  border-radius: 0px 4px 4px 0px;
+}
+
+/* Form search button styling.  */
+
+form button {
+  border: 2px solid rgb(255, 90, 95);
+  border-radius: 4px;
+  background-color: rgb(255, 90, 95);
+  font-family: Circular;
+  font-weight: 600;
+  line-height: 24px;
+  color: #FFF;
+  width: 100%;
+  padding: 10px 22px 10px 22px;
+  text-align: center;
+  font-size: 1.6rem;
+}
+
+/* * Hosting Section.  */
+
+
+/* full bleed light grey background to section.  */
+.host {
+  background-color:#f8f8f8;
+  padding-bottom: 22px;
+}
+.host h1 {
+  padding-top: 25px;
+  padding-bottom: 27px;
+}
+/* brings question mark svg inline with heading.  */
+.icon-qmark {
+  display: inline-flex;
+}
+/* set chevron to right of link text.  */
+.icon-right {
+  display: inline-flex;
+}
+/* add curved corners to image and object-fit to fit the image correctly.  */
+.host-wrapper img {
+  border-radius: 3px;
+  height: 280px;
+  object-fit: cover;
+}
+/* Learn how link styling.  */
+.host-link {
+  border: 2px solid #484848;
+  border-radius: 4px;
+  display: flex;
+  justify-content: center;  
+  padding: 14px 22px;
+  margin-bottom: 24px;
+}
+.host-link a {
+  display: flex;
+  font-family: Circular;
+  font-weight: 600;  
+  font-size: 1.6rem;
+}
+.icon-right {
+  align-self: flex-end;
+  padding-left: 10px;
+}
+/* ipad styling for image and heading and link.  */
+@media only screen and (min-width: 600px) {
+  .host-wrapper {
+    display: flex;
+  }
+  .host {
+    padding-top: 32px;
+    padding-bottom: 32px;
+  }
+  .host-wrapper img {
+    height: 296px;
+    width: 415px;
+    max-width: none;
+  }
+  .host-link {
+    width: 158px;
+    height: 49px;
+  }
+}
+
+
+/* * Review Card Section.  */
+
+/* Hide some text after heading in mobile view.  */
+@media only screen and (max-width: 600px) {
+  .review-text {
+  display: none;
+  }
+}
+.review-section {
+  margin-top: 25px;
+}
+/* remove margin from style sheet.  */
+.star-text p {
+  margin-block-start: 0;
+  margin-block-end: 0;
+}
+/* put star icon next to text and then vertically centre align it.  */
+.star-text {
+  display: flex;
+  /* !check this in ipad plus view, what happens versus using pixels? */
+  margin-bottom: 2.7rem;
+}
+.icon-star {
+  align-self: center;
+  padding-right: 8px;
+}
+/* setting width, flexgrow, shrink and basis on each review card.  */
+.review-card {
+  flex: 0 0 auto;
+  margin-right: 12px;
+  width: 270px; 
+}
+
+/* setting fixed height on images.  */
+.review-card > img {
+  border-radius: 3px;
+  height: 180px;
+}
+.greenstars {
+  margin: 16px 0px 0px 0px;
+}
+/* break text after three lines and add '...' */
+.review-card p:first-of-type {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;  
+  overflow: hidden;
+  padding-right: 20px;
+  line-height: 20px;
+}
+/* create circle from the portrait images */
+.review-footer > img {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+}
+/* bring name and location in line with portrait image.  */
+.review-footer {
+  display: flex;
+  align-items: center;
+  line-height: 20px;
+}
+/* remove margin and add padding to name and location text. */
+.review-footer p {
+  margin-block-start: 0;
+  margin-block-end: 0;
+  padding-left: 20px;
+}
+.review-name p:first-of-type {
+  font-weight: 600;
+}
+/* ipad styling to increase width of each card and increase size of images. */
+@media only screen and (min-width: 600px) {
+  .review-card {
+    width: 353px;
+  }
+  .review-card > img {
+    height: 236px;
+  }
+}
+/* desktop to remove horizontal scrolling and right hand margin.  */
+@media only screen and (min-width: 1023px) {
+  .review-card {
+    flex: 0 1 auto;
+    width: 33%;
+  }
+  .review-card:last-of-type {
+    margin-right: 0;
+  }
+  .review-card > img {
+    height: 182px;
+  }
+}
+
+
+/* * Info Section.  */
+
+.info-section {
+  margin-top: 30px;
+}
+/* grey horizontal line as wide as container.  */
+.horizontal-line {
+  border-bottom: 1px solid #f8f8f8;
+  margin-top: 24px;
+  margin-bottom: 24px;
+}
+/* setting flexgrow, shrink and basis on each info card.  */
+.info-card {
+  flex: 0 0 auto;
+  width: 188px; 
+}
+/* adds line height and pushes text left in info cards.  */
+.info-card p,
+.info-card h3 {
+  line-height: 20px;
+  padding-right: 24px;
+}
+
+.info-card:last-of-type p:last-of-type {
+  margin-top: 4px;
+}
+/* ipad styling to set width on cards and padding to right.  */
+@media only screen and (min-width: 600px) {
+  .info-card {
+    width: 250px;
+    padding-right: 24px;
+  }
+}
+/* desktop styling to remove horizontal scroll.  */
+@media only screen and (min-width: 1023px) {
+  .info-card {
+    flex: 0 1 auto;
+    width: 33%;
+  }
+  .info-card p,
+  .info-card h3 {
+    line-height: 20px;
+    padding-right: 0;
+  }
+  .info-card:last-of-type p:last-of-type {
+    margin-top: -16px;
+  }
+
+}
+
+
+/* * Booked Section.  */
+
+.booked-wrapper {
+  margin-top: 24px;
+}
+/* setting flexgrow, shrink and basis on each booked card.  */
+.booked-card {
+  flex: 0 0 auto;
+  margin-right: 12px;
+  width: 270px;
+}
+.booked-card img {
+  height: 180px;
+}
+/* turn off display flex on anchor elements to stack on top of each other.  */
+.booked-card a {
+  display: block; 
+  line-height: 24px;
+}
+/* Styling the text/anchor elements in booked cards.  */
+.booked-card > a:first-of-type {
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 1.2rem;
+  margin-top: 12px;
+  padding-left: 3px;
+}
+.booked-card a:nth-child(3) {
+  font-size: 1.8rem;
+  font-weight: 500;
+  padding-right: 20px;
+}
+/* line stars and rating number next to each other.  */
+.stars-rating-wrapper {
+  display: flex;
+  align-items: center;
+}
+.booked-stars {
+  padding-right: 3px;
+}
+.stars-rating-wrapper a {
+  font-size: 1.2rem;
+}
+/* styling the plus icon */
+.plus {
+  color: #fff;
+  background-color: #914669;
+  border-radius: 4px;
+  padding: 3px 5px;
+  margin-right: 5px;
+}
+.maroon-card .maroon {
+  padding-left: 0 !important;
+  color: #914669;
+}
+/* ipad styling including stlying the show all link.  */
+@media only screen and (min-width: 600px) {
+  .booked-card {
+    width: 353px;
+  }
+  .booked-card > img {
+    height: 236px;
+  }
+  .booked {
+    margin-top: 50px;
+  }
+  .booked-show-all {
+    display: flex;
+    align-items: center;
+    color: #008489;
+    font-size: 1.6rem;
+    font-weight: 600;
+  }
+  .booked-show-all svg {
+    margin-left: 6px;
+  }
+
+}
+/* desktop to remove scrolling.  */
+@media only screen and (min-width: 1023px) {
+  .booked-card {
+    flex: 0 1 auto;
+    
+  }
+  .booked-card > img {
+    height: 134px;
+  }
+
+}
+
+/* * When are you travelling section */
+
+.dates h2 {
+  margin-block-end: 0;
+}
+.dates p{
+  margin-block-start: 0;
+  margin-top: 6px;
+  line-height: 24px;
+  font-size: 1.6rem;
+  font-weight: 500;
+}
+/* Add dates link styling */
+.dates a {
+  display: block;
+  font-family: Circular;
+  font-weight: 600;
+  font-size: 1.6rem;
+  text-align: center;
+  width: 127px;
+  color: #fff;
+  background-color: #008489;
+  border-radius: 4px;
+  padding: 12px 22px 12px 22px;
+  margin-top: 24px;
+  margin-bottom: 24px;
+}
+
+/* Turn off 'show all' link in mobile view.  */
+@media only screen and (max-width: 600px) {
+  .booked-show-all {
+    display: none;
+  }
+}
+/* ipad styling Add top and bottom white space for the section.  */
+@media only screen and (min-width: 600px) {
+  .dates {
+    margin-top: 65px;
+    margin-bottom: 48px;
+  }
+}
+
+
+/* * Footer Section.  */
+
+/* Turn off footer for mobile view.  */
+@media only screen and (max-width: 600px) {
+  footer {
+    display: none;
+  }
+}
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+  
+}
+.social-icons {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 16.38px;
+  margin-bottom: 16.38px;
+  width: 82px;
+}
+.footer-card {
+  width: 270px;
+  line-height: 20px;
+}
+.footer-card ul {
+  color: #767676;
+}
+.footer-card a:hover {
+  text-decoration: underline;
+}
+.footer-card span {
+  color: #fff;
+  border-radius: 3px;
+  padding: 0px 4px;
+  margin-left: 5px;
+}
+/* horizonatal line style tweaks for ipad plus.  */
+.hz1 {
+  margin-bottom: 48px;
+}
+.hz2 {
+  margin-top: 10px;
+  margin-bottom: 7px;
+}
+
+
+/* * Aside Section.  */
+
+.legal {
+  display: flex;
+  margin-bottom: 15px;
+  color: #767676;
+  padding-right: 24px;
+}
+
+.legal a {
+  align-self: center;
+  padding-right: 5px;
+}
