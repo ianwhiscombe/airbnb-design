@@ -470,7 +470,6 @@ form button {
 /* put star icon next to text and then vertically centre align it.  */
 .star-text {
   display: flex;
-  /* !check this in ipad plus view, what happens versus using pixels? */
   margin-bottom: 2.7rem;
 }
 .icon-star {
