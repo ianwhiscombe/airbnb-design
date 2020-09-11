@@ -15,6 +15,10 @@
 
 ### ✨ [Demo](https://airbnb-design.netlify.app)
 
+## Screenshot
+![CleanShot 2020-09-11 at 14 37 35@2x](https://user-images.githubusercontent.com/40146191/92932119-5a64ec00-f43c-11ea-9a99-f8868ff09737.png)
+
+
 ## Usage
 
 ```sh
